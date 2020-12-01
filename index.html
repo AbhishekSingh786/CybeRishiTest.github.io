@@ -20,7 +20,22 @@
 </head>
 
 <body>
-
+ <div id="webchat"></div>
+<script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"></script>
+<!-- Demo Widget for Admin ChatBot -->
+<script>
+  WebChat.default.init({
+    selector: "#webchat",
+    initPayload: "/get_started",
+    customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
+    socketUrl: "http://51.158.96.209",
+    socketPath: "/socket.io/",
+    title: "Welcome",
+    subtitle: "I am Admin ChatBot",
+    params: {"storage": "session"} // can be set to "local"  or "session". details in storage section.
+  })
+</script>
+    
     <!-- TOP NAVBAR -->
     <div class="container-fluid" id="navigation">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
